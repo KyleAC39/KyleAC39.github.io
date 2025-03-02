@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Música Web</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <div class="music-player-container">
+        <div class="music-player">
+            <div class="player-header">
+                <h1><i class="fas fa-music"></i> Reproductor de Música</h1>
+                <div class="playlist-toggle">
+                    <button id="playlist-btn"><i class="fas fa-list"></i></button>
+                </div>
+            </div>
+
+            <div class="album-cover">
+                <img id="album-art" src="https://placehold.co/300x300/252525/FFFFFF?text=Selecciona+una+canción" alt="Portada del álbum">
+            </div>
+
+            <div class="song-info">
+                <h2 id="song-title">Selecciona una canción</h2>
+                <p id="song-artist">Artista</p>
+            </div>
+
+            <div class="progress-container">
+                <span id="current-time">0:00</span>
+                <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
+                    <div class="progress-thumb" id="progress-thumb"></div>
+                </div>
+                <span id="duration">0:00</span>
+            </div>
+
+            <div class="controls">
+                <button id="prev-btn" class="control-btn">
+                    <i class="fas fa-step-backward"></i>
+                </button>
+                <button id="play-btn" class="control-btn main-btn">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button id="next-btn" class="control-btn">
+                    <i class="fas fa-step-forward"></i>
+                </button>
+            </div>
+
+            <div class="volume-container">
+                <i class="fas fa-volume-up" id="volume-icon"></i>
+                <div class="volume-slider">
+                    <div class="volume-bar">
+                        <div class="volume-progress" id="volume-progress"></div>
+                        <div class="volume-thumb" id="volume-thumb"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="upload-container">
+                <label for="file-upload" class="custom-file-upload">
+                    <i class="fas fa-upload"></i> Añadir música
+                </label>
+                <input id="file-upload" type="file" accept="audio/*" multiple>
+            </div>
+
+            <div class="player-instructions">
+                <p><i class="fas fa-info-circle"></i> Sube archivos MP3, WAV, OGG u otros formatos de audio</p>
+            </div>
+
+            <audio id="audio-player" src=""></audio>
+        </div>
+
+        <div class="playlist-container" id="playlist-container">
+            <h3>Lista de reproducción</h3>
+            <ul id="playlist" class="playlist">
+                <!-- Las canciones se agregarán aquí dinámicamente -->
+                <li class="playlist-empty">No hay canciones añadidas.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="js/scrip.js"></script>
+</body>
+</html>
